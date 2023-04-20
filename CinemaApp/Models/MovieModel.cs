@@ -9,7 +9,7 @@ namespace CinemaApp.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public string Director { get; set; }
-        public string Category { get; set; }
+        public Enums.AgeCategory Category { get; set; }
         public Enums.AgeCategory AgeCategory { get; set; }
         public int LengthInMin { get; set; }
         public DateOnly PremiereDate { get; set; }

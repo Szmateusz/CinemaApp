@@ -9,5 +9,8 @@
         public HallModel Hall { get; set; }
         public DateTime Date { get; set; }
         public int AvaiblePlacesCount { get; set; }
+
+        public List<ReservationModel> Reservations { get; set; }
+        
     }
 }

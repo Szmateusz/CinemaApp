@@ -10,5 +10,26 @@
             Plus13,
             Kids
         }
+        public enum Category
+        {
+            None,
+            Fantasy,
+            Cryminal,
+            Romantic,
+            War,
+            SciFi
+        }
+        public enum PriceList
+        {
+           Normal,
+           Reduced,
+           Group,
+           Weekend,
+           Vip,
+           Kid,
+           Family,
+           Student,
+           Senior
+        }
     }
 }
