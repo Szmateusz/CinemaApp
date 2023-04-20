@@ -2,3 +2,33 @@
 
 @{
 }
+  <div class="container my-4">
+      <h1 class="text-center">Repertuar</h1>
+    </div>
+
+    <section>
+     <div class="container">
+      <div class="row">
+
+            @foreach(var mv in Model.Movie)
+            {
+             <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+
+                <img class="card-img-top" src="@mv.ImageUrl" alt="Plakat filmu">
+
+                <div class="card-body">
+
+                  <h5 class="card-title">Tytuł @mv.Title</h5>
+                  <p class="card-text">Opis: @mv.Description</p>
+                  <a href="#" class="btn btn-primary">Rezerwuj bilety</a>
+
+                </div>
+              </div>
+             </div>
+            }
+        
+
+      </div>
+     </div>
+    </section>
