@@ -16,12 +16,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\ASP.NET-App\CinemaApp\CinemaApp
 build_property._RazorSourceGeneratorDebug = 
 
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Home/MovieView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNb3ZpZVZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Home/PriceList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcmljZUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Home/Repeitorie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXBlaXRvcmllLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Shared/Error.cshtml]
@@ -30,6 +46,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Ticket/CustomerData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XEN1c3RvbWVyRGF0YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Ticket/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Ticket/Summary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XFN1bW1hcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Ticket/TicketBuy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XFRpY2tldEJ1eS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Ticket/TicketInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XFRpY2tldEluZm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/ASP.NET-App/CinemaApp/CinemaApp/Views/_ViewImports.cshtml]

@@ -1,6 +1,8 @@
-﻿namespace CinemaApp.Models
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace CinemaApp.Models
 {
-    public class UserModel
+    public class UserModel:IdentityUser
     {
     }
 }

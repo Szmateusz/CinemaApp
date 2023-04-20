@@ -18,15 +18,23 @@ namespace CinemaApp.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult PriceList()
+        {
+            return View();
+        }
+        public IActionResult Repeitorie()
+        {
+            return View();
+        }
+        public IActionResult About()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult MovieView()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
+
     }
 }

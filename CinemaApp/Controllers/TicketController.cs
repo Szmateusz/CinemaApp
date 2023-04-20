@@ -8,5 +8,21 @@ namespace CinemaApp.Controllers
         {
             return View();
         }
+        public IActionResult TicketInfo()
+        {
+            return View();
+        }
+        public IActionResult CustomerData()
+        {
+            return View();
+        }
+        public IActionResult TicketBuy()
+        {
+            return View();
+        }
+        public IActionResult Summary()
+        {
+            return View();
+        }
     }
 }
