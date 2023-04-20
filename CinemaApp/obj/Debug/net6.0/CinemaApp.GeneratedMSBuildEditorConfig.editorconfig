@@ -16,6 +16,66 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\ASP.NET-App\CinemaApp\CinemaApp
 build_property._RazorSourceGeneratorDebug = 
 
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Admin/ActorsView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWN0b3JzVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Admin/AddActor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkQWN0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Admin/AddHall.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkSGFsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Admin/AddMovie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkTW92aWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Admin/AddSchedule.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkU2NoZWR1bGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Admin/HallView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSGFsbFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Admin/MoviesView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTW92aWVzVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Admin/ReservationsDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVzZXJ2YXRpb25zRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Admin/ReservationsView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVzZXJ2YXRpb25zVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Admin/SchedulesView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2NoZWR1bGVzVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Admin/UpdateActor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBkYXRlQWN0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Admin/UpdateHall.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBkYXRlSGFsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Admin/UpdateMovie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBkYXRlTW92aWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Admin/UpdateSchedule.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBkYXRlU2NoZWR1bGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
