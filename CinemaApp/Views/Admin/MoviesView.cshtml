@@ -1,5 +1,51 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<MovieModel>
+
 @{
 }
+
+<center><h1>Filmy</h1></center>
+
+<div class="card">
+    <div class="card-header">Filmy: @Model.Count</div>
+    <div class="card-body">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Tytuł</th>
+                    <th>Ocena</th>
+                    <th>Kategoria</th>
+                    <th>Kategoria wiekowa</th>
+                    <th>Czas trwania</th>
+                    <th>Premiera</th>
+                    <th>Liczba recenzji</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    @foreach (var movie in Model)
+                    {
+                        <tr>
+                            <td><a class="text-dark link" asp-area="" asp-controller="Home" asp-action="MovieDetail" asp-route-id="@movie.ID"><img src="~/images/@movie.ImageUrl" alt="Movie image" /></a></td>
+                            <td>@movie.Title</td>
+                            <td>@movie.Rating</td>
+                            <td>@movie.Category</td>
+                            <td>@movie.AgeCategory</td>
+                            <td>@movie.LengthInMin</td>
+                            <td>@movie.PremiereDate</td>
+                            <td>@movie.Reviews.Count</td>
+                            <td>
+                                <a class="link" asp-action="UpdateMovie" asp-route-id="@movie.ID">Edytuj</a>
+                                <a class="link" asp-action="DeleteMovie" asp-route-id="@movie.ID" onclick="return confirm('Czy na pewno chcesz usunąć film?')">Usuń</a>                 
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

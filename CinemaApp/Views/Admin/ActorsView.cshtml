@@ -1,5 +1,42 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<ActorModel> 
+  
 @{
 }
+<center><h1>Aktorzy</h1></center>
+
+<div class="card">
+    <div class="card-header">Aktorzy: @Model.Count</div>
+    <div class="card-body">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                    <th>Liczba filmów z udziałem</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    @foreach (var actor in Model)
+                    {
+                        <tr>
+                            <td><a class="text-dark link" asp-area="" asp-controller="Home" asp-action="ActorDetail" asp-route-id="@actor.ID"><img src="~/images/@actor.ImageUrl" alt="Actor image" /></a></td>
+                            <td>@actor.FirstName</td>
+                            <td>@actor.LastName</td>
+                            <td>@actor.Movies.Count</td>
+                            <td>
+                                <a class="link" asp-action="UpdateActor" asp-route-id="@actor.ID">Edytuj</a>
+                                <a class="link" asp-action="DeleteActor" asp-route-id="@actor.ID" onclick="return confirm('Czy na pewno chcesz usunąć aktora?')">Usuń</a>                 
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

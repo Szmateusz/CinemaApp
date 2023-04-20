@@ -1,5 +1,6 @@
 using CinemaApp;
 using CinemaApp.Models;
+using CinemaApp.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,6 +8,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IMoviesRepository, MoviesRepository>();
+builder.Services.AddScoped<IHallRepository, HallRepository>();
+builder.Services.AddScoped<IActorsRepository, ActorsRepository>();
+builder.Services.AddScoped<IScheduleRepository, ScheduleRepository>();
+builder.Services.AddScoped<IReservationsRepository, ReservationsRepository>();
+
+
+
+
 
 builder.Services.AddDbContext<DBContext>(options =>
 {

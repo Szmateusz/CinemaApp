@@ -1,5 +1,50 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<ReservationModel>
+
 @{
 }
+
+<center><h1>Rezerwacje</h1></center>
+
+<div class="card">
+    <div class="card-header">Rezerwacje: @Model.Count</div>
+    <div class="card-body">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Film</th>
+                    <th>Sala</th>
+                    <th>Data seansu</th>
+                    <th>Data rezerwacji</th>
+                    <th>Imie i Nazwisko</th>
+                    <th>Email</th>
+                    <th>Telefon</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    @foreach (var reservation in Model)
+                    {
+                        <tr>               
+                            <td>@reservation.Seance.Movie.Title</td>
+                            <td>@reservation.Seance.Hall.HallName</td>
+                            <td>@reservation.Seance.Date</td>
+                            <td>@reservation.ReservationDate</td>
+                            <td>@reservation.FirstName  @reservation.LastName</td>
+                            <td>@reservation.Email</td>
+                            <td>@reservation.Phone</td>
+                            <td>
+                                <a class="link" asp-action="ReservationDetail" asp-route-id="@reservation.ID">Szczegóły</a>
+                                <a class="link" asp-action="UpdateReservation" asp-route-id="@reservation.ID">Edytuj</a>
+                                <a class="link" asp-action="DeleteReservation" asp-route-id="@reservation.ID" onclick="return confirm('Czy na pewno chcesz usunąć rezerwacje?')">Usuń</a>
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

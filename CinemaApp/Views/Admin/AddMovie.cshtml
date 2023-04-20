@@ -1,5 +1,65 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@using static CinemaApp.Models.Enums;
+@model CinemaApp.Models.MovieModel
+
+<h1>Dodaj aktora</h1>
+
+@using (Html.BeginForm("AddMovie", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.ImageUrl)
+        <input type="file" class="form-control" name="ImageUrl" id="ImageUrl" />
+        @Html.ValidationMessageFor(m => m.ImageUrl, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Title)
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Category)
+        @Html.DropDownListFor(x => x.Category, new SelectList(Enum.GetValues(typeof(Category))), "Wybierz kategorię", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Category, "", new { @class = "text-danger" })
+    </div>
+
+     <div class="form-group">
+        @Html.LabelFor(x => x.Category)
+        @Html.DropDownListFor(x => x.Category, new SelectList(Enum.GetValues(typeof(AgeCategory))), "Wybierz kategorię wiekową", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.AgeCategory, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Description)
+        @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Director)
+        @Html.TextBoxFor(x => x.Director, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Director, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Description)
+        @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.LengthInMin)
+        @Html.TextBoxFor(x => x.LengthInMin, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.LengthInMin, "", new { @class = "text-danger" , @type = "number"})
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.PremiereDate)
+        @Html.TextBoxFor(x => x.PremiereDate, new { @class = "form-control" , @type="date"})
+        @Html.ValidationMessageFor(m => m.PremiereDate, "", new { @class = "text-danger" })
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">Dodaj aktora</button>
 }

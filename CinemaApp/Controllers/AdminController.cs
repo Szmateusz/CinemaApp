@@ -6,7 +6,7 @@ using System.Data;
 
 namespace CinemaApp.Controllers
 {
-    [Authorize(Roles = "admin", AuthenticationSchemes = "Identity.Application")]
+   // [Authorize(Roles = "admin", AuthenticationSchemes = "Identity.Application")]
     public class AdminController : Controller
     {
         public readonly DBContext _context;
@@ -34,6 +34,7 @@ namespace CinemaApp.Controllers
         {
             return View();
         }
+
         #region View
 
         public IActionResult HallView()

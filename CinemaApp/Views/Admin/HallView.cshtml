@@ -1,5 +1,40 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<HallModel>
+
 @{
 }
+<center><h1>Sale</h1></center>
+
+<div class="card">
+    <div class="card-header">Sale: @Model.Count</div>
+    <div class="card-body">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nazwa</th>
+                    <th>Liczba Miejsc</th>
+                    <th>Liczba zaplanowanych seansów</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    @foreach (var hall in Model)
+                    {
+                        <tr>
+                            <td>@hall.HallName</td>
+                            <td>@hall.Places</td>
+                            <td>@hall.Schedules.Count</td>
+                            <td>
+                                <a class="link" asp-action="UpdateHall" asp-route-id="@hall.ID">Edytuj</a>
+                                <a class="link" asp-action="DeleteHall" asp-route-id="@hall.ID" onclick="return confirm('Czy na pewno chcesz usunąć sale?')">Usuń</a>
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

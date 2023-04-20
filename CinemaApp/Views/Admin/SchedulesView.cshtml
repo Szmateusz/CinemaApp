@@ -1,5 +1,52 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<ScheduleModel>
+
 @{
 }
+
+<center><h1>Seanse</h1></center>
+
+<div class="card">
+    <div class="card-header">Seanse: @Model.Count</div>
+    <div class="card-body">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Tytuł</th>
+                    <th>Sala</th>
+                    <th>Ocena</th>
+                    <th>Kategoria</th>
+                    <th>Kategoria wiekowa</th>
+                    <th>Czas trwania</th>
+                    <th>Data</th>                                                   
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    @foreach (var schedule in Model)
+                    {
+                        <tr>
+                            <td><a class="text-dark link" asp-area="" asp-controller="Home" asp-action="MovieDetail" asp-route-id="@schedule.MovieID"><img src="~/images/@schedule.Movie.ImageUrl" alt="Movie image" /></a></td>
+                            <td>@schedule.Movie.Title</td>
+                            <td>@schedule.Hall.HallName</td>
+                            <td>@schedule.Movie.Rating</td>
+                            <td>@schedule.Movie.Category</td>
+                            <td>@schedule.Movie.AgeCategory</td>
+                            <td>@schedule.Movie.LengthInMin</td>
+                            <td>@schedule.Date</td>
+                       
+                            <td>
+                                <a class="link" asp-action="UpdateSchedule" asp-route-id="@schedule.ID">Edytuj</a>
+                                <a class="link" asp-action="DeleteSchedule" asp-route-id="@schedule.ID" onclick="return confirm('Czy na pewno chcesz usunąć seans?')">Usuń</a>
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

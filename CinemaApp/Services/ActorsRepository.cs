@@ -18,7 +18,7 @@ namespace CinemaApp.Services
         {
             return _context.Actors.ToList();
         }
-        public void AddHall(ActorModel actor)
+        public void AddActor(ActorModel actor)
         {
             _context.Actors.Add(actor);
             _context.SaveChanges();
