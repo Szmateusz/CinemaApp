@@ -1,11 +1,18 @@
-﻿@model List<ActorModel> 
+﻿@model AddActorsViewModel
   
 @{
 }
 <center><h1>Aktorzy</h1></center>
 
+ @using (Html.BeginForm("ActorsView", "Admin", FormMethod.Post))
+    {
+        @Html.TextBoxFor(x=>x.SearchString, new {placeholder = "Znajdź..."})
+
+        <button type="submit">Szukaj</button>
+    }
+
 <div class="card">
-    <div class="card-header">Aktorzy: @Model.Count</div>
+    <div class="card-header">Aktorzy: @Model.Actors.Count</div>
     <div class="card-body">
 
         <table class="table">
@@ -21,7 +28,7 @@
             <tbody>
                 @if (Model != null)
                 {
-                    @foreach (var actor in Model)
+                    @foreach (var actor in Model.Actors)
                     {
                         <tr>
                             <td><a class="text-dark link" asp-area="" asp-controller="Home" asp-action="ActorDetail" asp-route-id="@actor.ID"><img src="~/images/@actor.ImageUrl" alt="Actor image" /></a></td>

@@ -37,28 +37,73 @@ namespace CinemaApp.Controllers
 
         #region View
 
+        [HttpGet]
         public IActionResult HallView()
         {
             var model = _hallRepository.GetAllHalls();
             return View(model);
         }
+        [HttpPost]
+        public IActionResult HallView()
+        {
+            var model = _hallRepository.GetAllHalls();
+            return View(model);
+        }
+        [HttpGet]
         public IActionResult MoviesView()
         {
             var model = _movieRepository.GetAllMovies();
             return View(model);
         }
-       
+        [HttpPost]
+        public IActionResult MoviesView()
+        {
+            var model = _movieRepository.GetAllMovies();
+            return View(model);
+        }
+
+        [HttpGet]
         public IActionResult SchedulesView()
         {
             var model = _scheduleRepository.GetAllSchedules();
             return View(model);
         }
+        [HttpPost]
+        public IActionResult SchedulesView()
+        {
+            var model = _scheduleRepository.GetAllSchedules();
+            return View(model);
+        }
+        [HttpGet]
         public IActionResult ActorsView()
         {
             var model = _scheduleRepository.GetAllSchedules();
 
             return View(model);
         }
+        [HttpPost]
+        public IActionResult ActorsView(ActorsViewModel model)
+        {
+            var actors = _actorRepository.GetAllActors().ToList();
+
+            if (!string.IsNullOrEmpty(model.SearchString))
+            {
+                actors = actors.Where(b => b.FirstName.Contains(model.SearchString, StringComparison.OrdinalIgnoreCase) ||
+                 b.LastName.Contains(model.SearchString, StringComparison.OrdinalIgnoreCase)).ToList();
+                 
+            }
+
+            model.Actors = actors;
+            return View(model);
+        }
+        [HttpGet]
+        public IActionResult ReservationsView()
+        {
+            var model = _reservationsRepository.GetAllReservations();
+
+            return View(model);
+        }
+        [HttpPost]
         public IActionResult ReservationsView()
         {
             var model = _reservationsRepository.GetAllReservations();

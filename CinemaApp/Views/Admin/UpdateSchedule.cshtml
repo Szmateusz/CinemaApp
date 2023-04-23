@@ -1,5 +1,29 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@using static CinemaApp.Models.Enums;
+@model CinemaApp.Models.AddScheduleView
+
+<h1>Aktualizuj harmonogram</h1>
+
+@using (Html.BeginForm("AddSchedule", "Admin", FormMethod.Post))
+{
+    
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Movies, "Wybierz film:")
+        @Html.DropDownListFor(model => model.Movies, new SelectList(Model.Movies, "ID", "Title"), "Wybierz...", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Halls, "Wybierz salę:")
+        @Html.DropDownListFor(model => model.Movies, new SelectList(Model.Halls, "ID", "HallName"), "Wybierz...", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Date, "Wpisz datę seansu")
+        @Html.TextBoxFor(x => x.Date, new { @class = "form-control" , @type="date"})
+        @Html.ValidationMessageFor(m => m.Date, "", new { @class = "text-danger" })
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">Aktualizuj harmonogram</button>
 }
