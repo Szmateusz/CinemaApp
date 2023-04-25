@@ -1,12 +1,19 @@
-﻿@model List<ReservationModel>
+﻿@model ReservationsViewModel
 
 @{
 }
 
 <center><h1>Rezerwacje</h1></center>
 
+@using (Html.BeginForm("ReservationsView", "Admin", FormMethod.Post))
+{
+    @Html.TextBoxFor(x=>x.SearchString, new {placeholder = "Znajdź..."})
+
+    <button type="submit">Szukaj</button>
+}
+
 <div class="card">
-    <div class="card-header">Rezerwacje: @Model.Count</div>
+    <div class="card-header">Rezerwacje: @Model.Reservations.Count</div>
     <div class="card-body">
 
         <table class="table">
@@ -23,9 +30,9 @@
                 </tr>
             </thead>
             <tbody>
-                @if (Model != null)
+                @if (Model.Reservations != null)
                 {
-                    @foreach (var reservation in Model)
+                    @foreach (var reservation in Model.Reservations)
                     {
                         <tr>               
                             <td>@reservation.Seance.Movie.Title</td>

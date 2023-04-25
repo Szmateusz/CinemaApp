@@ -1,11 +1,19 @@
-﻿@model List<HallModel>
+﻿@model HallViewModel
 
 @{
 }
 <center><h1>Sale</h1></center>
 
+
+ @using (Html.BeginForm("HallView", "Admin", FormMethod.Post))
+    {
+        @Html.TextBoxFor(x=>x.SearchString, new {placeholder = "Znajdź..."})
+
+        <button type="submit">Szukaj</button>
+    }
+
 <div class="card">
-    <div class="card-header">Sale: @Model.Count</div>
+    <div class="card-header">Sale: @Model.Halls.Count</div>
     <div class="card-body">
 
         <table class="table">
@@ -20,7 +28,7 @@
             <tbody>
                 @if (Model != null)
                 {
-                    @foreach (var hall in Model)
+                    @foreach (var hall in Model.Halls)
                     {
                         <tr>
                             <td>@hall.HallName</td>

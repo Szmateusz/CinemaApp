@@ -1,12 +1,21 @@
-﻿@model List<MovieModel>
+﻿@model MoviesViewModel
 
 @{
 }
 
 <center><h1>Filmy</h1></center>
 
+@using (Html.BeginForm("MoviesView", "Admin", FormMethod.Post))
+{
+    @Html.TextBoxFor(x=>x.SearchString, new {placeholder = "Znajdź..."})
+    @Html.DropDownListFor(x => x.Category, Html.GetEnumSelectList<Enums.Category>(), "Wybierz gatunek")
+    @Html.DropDownListFor(x => x.AgeCategory, Html.GetEnumSelectList<Enums.AgeCategory>(), "Wybierz kategorię wiekową")
+
+    <button type="submit">Szukaj</button>
+}
+
 <div class="card">
-    <div class="card-header">Filmy: @Model.Count</div>
+    <div class="card-header">Filmy: @Model.Movies.Count</div>
     <div class="card-body">
 
         <table class="table">
@@ -24,9 +33,9 @@
                 </tr>
             </thead>
             <tbody>
-                @if (Model != null)
+                @if (Model.Movies != null)
                 {
-                    @foreach (var movie in Model)
+                    @foreach (var movie in Model.Movies)
                     {
                         <tr>
                             <td><a class="text-dark link" asp-area="" asp-controller="Home" asp-action="MovieDetail" asp-route-id="@movie.ID"><img src="~/images/@movie.ImageUrl" alt="Movie image" /></a></td>

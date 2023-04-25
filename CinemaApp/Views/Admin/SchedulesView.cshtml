@@ -1,12 +1,19 @@
-﻿@model List<ScheduleModel>
+﻿@model SchedulesViewModel
 
 @{
 }
 
 <center><h1>Seanse</h1></center>
 
+ @using (Html.BeginForm("SchedulesView", "Admin", FormMethod.Post))
+    {
+        @Html.TextBoxFor(x=>x.SearchString, new {placeholder = "Znajdź..."})
+
+        <button type="submit">Szukaj</button>
+    }
+
 <div class="card">
-    <div class="card-header">Seanse: @Model.Count</div>
+    <div class="card-header">Seanse: @Model.Schedules.Count</div>
     <div class="card-body">
 
         <table class="table">
@@ -24,9 +31,9 @@
                 </tr>
             </thead>
             <tbody>
-                @if (Model != null)
+                @if (Model.Schedules != null)
                 {
-                    @foreach (var schedule in Model)
+                    @foreach (var schedule in Model.Schedules)
                     {
                         <tr>
                             <td><a class="text-dark link" asp-area="" asp-controller="Home" asp-action="MovieDetail" asp-route-id="@schedule.MovieID"><img src="~/images/@schedule.Movie.ImageUrl" alt="Movie image" /></a></td>
