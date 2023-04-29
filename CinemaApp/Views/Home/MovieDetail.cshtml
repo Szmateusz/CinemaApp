@@ -1,0 +1,74 @@
+﻿@model CinemaApp.Models.MovieModel
+
+@{
+    ViewData["Title"] = "Movie Details";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="@Model.ImageUrl" class="img-fluid" alt="@Model.Title" />
+    </div>
+    <div class="col-md-8">
+        <h1>@Model.Title</h1>
+        <p><strong>Description: </strong>@Model.Description</p>
+        <p><strong>Director: </strong>@Model.Director</p>
+        <p><strong>Category: </strong>@Model.Category</p>
+        <p><strong>Age Category: </strong>@Model.AgeCategory</p>
+        <p><strong>Length: </strong>@Model.LengthInMin minutes</p>
+        <p><strong>Premiere Date: </strong>@Model.PremiereDate.ToShortDateString()</p>
+        <p><strong>Rating: </strong>@Model.Rating</p>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-12">
+        <h2>Actors</h2>
+        <ul>
+            @foreach (var actor in Model.Actors)
+            {
+                <li>@actor.FirstName @actor.LastName</li>
+            }
+        </ul>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-12">
+        <h2>Schedules</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Room</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var schedule in Model.Schedules)
+                {
+                    <tr>
+                        <td>@schedule.Date.ToShortDateString()</td>
+                        <td>@schedule.Date.ToString("hh:mm tt")</td>
+                        <td>@schedule.Hall.HallName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-12">
+        <h2>Reviews</h2>
+        <ul>
+            @foreach (var review in Model.Reviews)
+            {
+                <li>
+                    <p><strong>Author: </strong>@review.Author</p>
+                    <p><strong>Rating: </strong>@review.Rating</p>
+                    <p><strong>Comment: </strong>@review.Text</p>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

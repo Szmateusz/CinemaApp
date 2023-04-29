@@ -1,16 +1,28 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CinemaApp.Models;
+using CinemaApp.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CinemaApp.Controllers
 {
     public class TicketController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
+        public readonly IScheduleRepository _scheduleRepository;
+        public TicketController(IScheduleRepository scheduleRepository) {
+
+            _scheduleRepository = scheduleRepository;
+
         }
-        public IActionResult TicketInfo()
+        public IActionResult Index(int id)
         {
-            return View();
+            var model = _scheduleRepository.GetScheduleById(id);
+
+            return View(model);
+        }
+        public IActionResult TicketInfo([FromBody] List<TicketModel> tickets)
+        {
+            var model = tickets;
+
+            return View(model);
         }
         public IActionResult CustomerData()
         {

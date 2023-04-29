@@ -1,3 +1,22 @@
-﻿
+﻿@model ScheduleModel
 @{
 }
+
+<h1>@Model.Movie.Title</h1>
+<h2>@Model.Hall.HallName</h2>
+<h3>@Model.Date</h3>
+
+<section class="seats_container">
+    @for(int r = 0; r <= 10; r++)
+    {
+        for (int p = 0;p <= 10; p++)
+        {
+            <div class="avaibleSit">
+                <button onclick="selectSit("@r","@p")"></button>
+            </div>
+        }
+    }
+</section>
+
+<button onclick="pursche()">Zakup</button>
+

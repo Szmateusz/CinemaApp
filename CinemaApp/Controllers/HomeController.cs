@@ -1,4 +1,5 @@
 ﻿using CinemaApp.Models;
+using CinemaApp.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,10 +8,12 @@ namespace CinemaApp.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IMoviesRepository _moviesRepository;
+        public HomeController(ILogger<HomeController> logger,IMoviesRepository moviesRepository)
         {
+
             _logger = logger;
+            _moviesRepository = moviesRepository;
         }
 
         public IActionResult Index()
@@ -18,7 +21,7 @@ namespace CinemaApp.Controllers
             return View();
         }
 
-        public IActionResult PriceList()
+        public IActionResult Pricing()
         {
             return View();
         }
@@ -31,9 +34,21 @@ namespace CinemaApp.Controllers
             return View();
         }
 
-        public IActionResult MovieView()
+        public IActionResult MovieDetail(int id)
         {
-            return View();
+            var movie = _moviesRepository.GetMovieById(id);
+
+            if (movie == null)
+            {
+                return NotFound();
+            }
+
+            return View(movie);
+        }
+
+        public IActionResult PurchaseTicket(int id)
+        {
+            return RedirectToAction("Index","Ticket",id);
         }
 
     }

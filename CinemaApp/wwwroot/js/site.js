@@ -1,4 +1,22 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿let list = [];
 
-// Write your JavaScript code.
+function selectSit(r, p) {
+
+    let element = { row: r, place: p };
+
+    list.push(element);
+}
+
+function pursche() {
+
+    fetch('/Ticket/TicketInfo', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(list)
+    })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+}

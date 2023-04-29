@@ -1,8 +1,112 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model HomeIndexViewModel
+@{
+    ViewData["Title"] = "Jr.Net Cinema";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="jumbotron">
+    <h1 class="display-4">Witaj w kinie Jr.Net!</h1>
+    <p class="lead">Najlepsze kino w mieście!</p>
+    <hr class="my-4">
+    <p>Zapraszamy do naszego kina, gdzie czeka na Ciebie najlepsza rozrywka w mieście.</p>
+    <a class="btn btn-primary btn-lg" href="/Pricing" role="button">Zobacz cennik</a>
 </div>
+
+<div class="row">
+    <div class="col-md-8">
+        <h2><a asp-action="About">O nas</a></h2>
+        <p>Jr.Net Cinema to kino, które powstało z myślą o zapewnieniu najwyższej jakości usług kinowych. Nasze sale kinowe są wyposażone w najnowsze systemy projekcyjne oraz dźwiękowe, a każdy seans to niezapomniane wrażenia. Ponadto, oferujemy bogaty wybór przekąsek oraz napojów, aby każdy seans był pełen komfortu i relaksu.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Zaloguj się</h2>
+        <form>
+            <div class="form-group">
+                <label for="username">Nazwa użytkownika</label>
+                <input type="text" class="form-control" id="username" placeholder="Wpisz nazwę użytkownika">
+            </div>
+            <div class="form-group">
+                <label for="password">Hasło</label>
+                <input type="password" class="form-control" id="password" placeholder="Wpisz hasło">
+            </div>
+            <button type="submit" class="btn btn-primary">Zaloguj</button>
+        </form>
+    </div>
+</div>
+
+<section>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Nowości</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Tytuł</th>
+                        <th>Reżyser</th>
+                        <th>Kategoria</th>
+                        <th>Kategoria wiekowa</th>
+                        <th>Ocena</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.NewestMovies != null)
+                    {
+                        @foreach (var movie in Model.NewestMovies)
+                        {
+                            <tr>
+                                <td><a href="@Url.Action("MovieDetail", new { id = movie.ID })"><img src="@movie.ImageUrl" alt="Plakat filmu" /></a></td>
+                                <td>@movie.ImageUrl</td>
+                                <td>@movie.Title</td>
+                                <td>@movie.Director</td>
+                                <td>@movie.Category</td>
+                                <td>@movie.AgeCategory</td>
+                                <td>@movie.Rating</td>
+                            </tr>
+                        }
+
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+<section>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Polecane</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Tytuł</th>
+                        <th>Reżyser</th>
+                        <th>Kategoria</th>
+                        <th>Kategoria wiekowa</th>
+                        <th>Ocena</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.RecommendMovies != null)
+                    {
+                        @foreach (var movie in Model.RecommendMovies)
+                        {
+                            <tr>
+                                <td><a href="@Url.Action("MovieDetail", new { id = movie.ID })"><img src="@movie.ImageUrl" alt="Plakat filmu" /></a></td>
+                                <td>@movie.ImageUrl</td>
+                                <td>@movie.Title</td>
+                                <td>@movie.Director</td>
+                                <td>@movie.Category</td>
+                                <td>@movie.AgeCategory</td>
+                                <td>@movie.Rating</td>
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>

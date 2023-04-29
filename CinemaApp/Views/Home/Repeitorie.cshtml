@@ -1,4 +1,4 @@
-﻿
+﻿@model List<ScheduleModel>
 
 @{
 }
@@ -10,19 +10,25 @@
      <div class="container">
       <div class="row">
 
-            @foreach(var mv in Model.Movie)
+            @foreach(var schedule in Model)
             {
              <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
 
-                <img class="card-img-top" src="@mv.ImageUrl" alt="Plakat filmu">
+                <a href="@Url.Action("MovieDetail", new { id = schedule.Movie.ID })"><img src="@schedule.Movie.ImageUrl" alt="Plakat filmu" /></a>
 
                 <div class="card-body">
 
-                  <h5 class="card-title">Tytuł @mv.Title</h5>
-                  <p class="card-text">Opis: @mv.Description</p>
-                  <a href="#" class="btn btn-primary">Rezerwuj bilety</a>
+                  <h5 class="card-title">Tytuł @schedule.Movie.Title</h5>
+                  <p class="card-text">Kategoria: @schedule.Movie.Category</p>
+                  <p class="card-text">Kategoria wiekowa: @schedule.Movie.AgeCategory</p>
+                  <p class="card-text">Długość: @schedule.Movie.LengthInMin</p>
+                  <p class="card-text">Data premiery: @schedule.Date</p>
+                  <p class="card-text">Data premiery: @schedule.Hall.HallName</p>
+                  <p class="card-text">Data premiery: @schedule.AvaiblePlacesCount</p>
 
+                  <a href="@Url.Action("PurchaseTicket", new { id = schedule.ID })" role="button" class="btn btn-primary">Kup bilety</a>
+                  
                 </div>
               </div>
              </div>
