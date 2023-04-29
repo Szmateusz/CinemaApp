@@ -31,23 +31,34 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        
+
                         <th>Film</th>
                         <th>Sala</th>
                         <th>Data</th>
-                       
+
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        
+
                         <td>@Model.Schedule.Movie.Title</td>
                         <td>@Model.Schedule.Hall.HallName</td>
                         <td>@Model.Schedule.Date</td>
-                       
+
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+
+    <form asp-action="TicketPay" method="post">
+        <input type="submit" value="Zapłać" class="btn btn-primary" />
+        @foreach (var ticket in Model.Tickets)
+        {
+            <input type="hidden" name="Tickets[@Model.Tickets.IndexOf(ticket)].Row" value="@ticket.Row" />
+            <input type="hidden" name="Tickets[@Model.Tickets.IndexOf(ticket)].Place" value="@ticket.Place" />
+        }
+        <input type="hidden" name="Schedule.ID" value="@Model.Schedule.ID" />
+       
+    </form>
 </div>
