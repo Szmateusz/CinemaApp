@@ -9,16 +9,27 @@ namespace CinemaApp.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IMoviesRepository _moviesRepository;
-        public HomeController(ILogger<HomeController> logger,IMoviesRepository moviesRepository)
+        private readonly IScheduleRepository _scheduleRepository;
+
+        public HomeController(ILogger<HomeController> logger,IMoviesRepository moviesRepository,IScheduleRepository scheduleRepository)
         {
 
             _logger = logger;
             _moviesRepository = moviesRepository;
+            _scheduleRepository = scheduleRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var newest = _moviesRepository.GetAllMovies().Take(5).ToList();
+            var recomment = _moviesRepository.GetAllMovies().Take(4).ToList();
+
+            var model = new HomeIndexViewModel
+            {
+                NewestMovies = newest,
+                RecommendMovies = recomment
+            };
+            return View(model);
         }
 
         public IActionResult Pricing()
@@ -27,7 +38,8 @@ namespace CinemaApp.Controllers
         }
         public IActionResult Repeitorie()
         {
-            return View();
+            var model = _scheduleRepository.GetAllSchedules().ToList();
+            return View(model);
         }
         public IActionResult About()
         {
@@ -46,9 +58,9 @@ namespace CinemaApp.Controllers
             return View(movie);
         }
 
-        public IActionResult PurchaseTicket(int id)
+        public IActionResult PurchaseTicket(int ticketId)
         {
-            return RedirectToAction("Index","Ticket",id);
+            return RedirectToAction("Index","Ticket",new { id = ticketId});
         }
 
     }

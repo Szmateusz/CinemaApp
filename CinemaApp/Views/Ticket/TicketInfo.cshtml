@@ -1,3 +1,53 @@
-﻿
+﻿@model TicketInfoViewModel
+
 @{
+    ViewData["Title"] = "Informacja o biletach";
 }
+
+<div class="container">
+    <h1 class="text-center">Informacja o wybranych biletach</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Rząd</th>
+                        <th>Miejsce</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var ticket in Model.Tickets)
+                    {
+                        <tr>
+                            <td>@ticket.Row</td>
+                            <td>@ticket.Place</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        
+                        <th>Film</th>
+                        <th>Sala</th>
+                        <th>Data</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        
+                        <td>@Model.Schedule.Movie.Title</td>
+                        <td>@Model.Schedule.Hall.HallName</td>
+                        <td>@Model.Schedule.Date</td>
+                       
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

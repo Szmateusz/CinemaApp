@@ -15,7 +15,7 @@
              <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
 
-                <a href="@Url.Action("MovieDetail", new { id = schedule.Movie.ID })"><img src="@schedule.Movie.ImageUrl" alt="Plakat filmu" /></a>
+                <a href="@Url.Action("MovieDetail", new { id = schedule.MovieID })"><img src="@schedule.Movie.ImageUrl" alt="Plakat filmu" /></a>
 
                 <div class="card-body">
 
@@ -27,7 +27,7 @@
                   <p class="card-text">Data premiery: @schedule.Hall.HallName</p>
                   <p class="card-text">Data premiery: @schedule.AvaiblePlacesCount</p>
 
-                  <a href="@Url.Action("PurchaseTicket", new { id = schedule.ID })" role="button" class="btn btn-primary">Kup bilety</a>
+                            <a href="@Url.Action("PurchaseTicket", new { ticketId = schedule.ID })" role="button" class="btn btn-primary">Kup bilety</a>
                   
                 </div>
               </div>

@@ -1,22 +1,46 @@
 ﻿@model ScheduleModel
 @{
 }
-
+<script>
+    let id=@Model.ID;
+</script>
 <h1>@Model.Movie.Title</h1>
 <h2>@Model.Hall.HallName</h2>
 <h3>@Model.Date</h3>
 
-<section class="seats_container">
-    @for(int r = 0; r <= 10; r++)
-    {
-        for (int p = 0;p <= 10; p++)
+<br />
+<hr />
+<br />
+
+<h5>Lista biletów </h5>
+<ul id="TicketList"></ul>
+
+<section>
+
+    <center>
+        <h3>Ekran</h3>
+        <div style="width:80%;height:30px;background-color:grey;"></div>
+    </center>
+
+    <div class="seats_container">
+
+        @for (int r = 0; r <= 10; r++)
         {
-            <div class="avaibleSit">
-                <button onclick="selectSit("@r","@p")"></button>
+            <div class="seats_Row">
+                   <span>Rząd:@r</span>
+
+                   @for (int p = 0; p <= 10; p++)
+                    {
+                        <div id="r:@r,p:@p"  class="avaibleSit">
+                             <button onclick='selectSit("@r","@p")'>@p</button>
+                        </div>
+                    }
             </div>
+ 
         }
-    }
+    </div>
+ 
 </section>
 
-<button onclick="pursche()">Zakup</button>
+<button id="purscheButton" disabled onclick="pursche()">Zakup</button>
 

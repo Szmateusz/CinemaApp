@@ -1,5 +1,6 @@
 ﻿using CinemaApp.Models;
 using System.Collections;
+using Microsoft.EntityFrameworkCore;
 
 namespace CinemaApp.Services
 {
@@ -11,16 +12,16 @@ namespace CinemaApp.Services
         }
         public ScheduleModel GetScheduleById(int id)
         {
-            return _context.Schedules.SingleOrDefault(m => m.ID == id);
+            return _context.Schedules.Include(m => m.Movie).Include(h => h.Hall).Include(r => r.Reservations).SingleOrDefault(m => m.ID == id);
         }
         public IEnumerable<ScheduleModel> GetAllSchedules()
 
         {
-            return _context.Schedules.ToList();
+            return _context.Schedules.Include(m=>m.Movie).Include(h=>h.Hall).Include(r=>r.Reservations).ToList();
         }
         public IEnumerable<ScheduleModel> GetScheduleByDate(DateTime date) {
 
-            return _context.Schedules.Where(s=>s.Date.Equals(date)).ToList();
+            return _context.Schedules.Include(m => m.Movie).Include(h => h.Hall).Include(r => r.Reservations).Where(s=>s.Date.Equals(date)).ToList();
         }
 
         public void AddSchedule(ScheduleModel schedule)

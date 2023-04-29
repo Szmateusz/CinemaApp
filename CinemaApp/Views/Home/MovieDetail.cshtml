@@ -10,31 +10,35 @@
     </div>
     <div class="col-md-8">
         <h1>@Model.Title</h1>
-        <p><strong>Description: </strong>@Model.Description</p>
-        <p><strong>Director: </strong>@Model.Director</p>
-        <p><strong>Category: </strong>@Model.Category</p>
-        <p><strong>Age Category: </strong>@Model.AgeCategory</p>
-        <p><strong>Length: </strong>@Model.LengthInMin minutes</p>
-        <p><strong>Premiere Date: </strong>@Model.PremiereDate.ToShortDateString()</p>
-        <p><strong>Rating: </strong>@Model.Rating</p>
+        <p><strong>Opis: </strong>@Model.Description</p>
+        <p><strong>Reżyser: </strong>@Model.Director</p>
+        <p><strong>Kategoria: </strong>@Model.Category</p>
+        <p><strong>Kategoria wiekowa: </strong>@Model.AgeCategory</p>
+        <p><strong>Długość: </strong>@Model.LengthInMin minutes</p>
+        <p><strong>Premiera: </strong>@Model.PremiereDate.ToShortDateString()</p>
+        <p><strong>Ocena: </strong>@Model.Rating</p>
     </div>
 </div>
 
 <div class="row mt-5">
     <div class="col-md-12">
-        <h2>Actors</h2>
+        <h2>Aktorzy</h2>
         <ul>
-            @foreach (var actor in Model.Actors)
+            @if(Model.Actors!= null)
             {
-                <li>@actor.FirstName @actor.LastName</li>
+                 @foreach (var actor in Model.Actors)
+                 {
+                     <li>@actor.FirstName @actor.LastName</li>
+                 }
             }
+           
         </ul>
     </div>
 </div>
 
 <div class="row mt-5">
     <div class="col-md-12">
-        <h2>Schedules</h2>
+        <h2>Harmonogramy</h2>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -44,14 +48,18 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var schedule in Model.Schedules)
+                @if (Model.Schedules != null)
                 {
-                    <tr>
-                        <td>@schedule.Date.ToShortDateString()</td>
-                        <td>@schedule.Date.ToString("hh:mm tt")</td>
-                        <td>@schedule.Hall.HallName</td>
-                    </tr>
+                     @foreach (var schedule in Model.Schedules)
+                     {
+                        <tr>
+                            <td>@schedule.Date.ToShortDateString()</td>
+                            <td>@schedule.Date.ToString("hh:mm tt")</td>
+                            <td>@schedule.Hall.HallName</td>
+                        </tr>
+                     }
                 }
+               
             </tbody>
         </table>
     </div>
@@ -59,16 +67,20 @@
 
 <div class="row mt-5">
     <div class="col-md-12">
-        <h2>Reviews</h2>
+        <h2>Recenzje</h2>
         <ul>
-            @foreach (var review in Model.Reviews)
+            @if (Model.Reviews != null)
             {
-                <li>
-                    <p><strong>Author: </strong>@review.Author</p>
-                    <p><strong>Rating: </strong>@review.Rating</p>
-                    <p><strong>Comment: </strong>@review.Text</p>
-                </li>
+                  @foreach (var review in Model.Reviews)
+                  {
+                    <li>
+                        <p><strong>Author: </strong>@review.Author</p>
+                        <p><strong>Rating: </strong>@review.Rating</p>
+                        <p><strong>Comment: </strong>@review.Text</p>
+                    </li>
+                  }
             }
+          
         </ul>
     </div>
 </div>

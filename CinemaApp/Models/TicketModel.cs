@@ -2,7 +2,8 @@
 {
     public class TicketModel
     {
-        public int row { get; set; }
-        public int place { get; set; }
+        
+        public string Row { get; set; }
+        public string Place { get; set; }
     }
 }

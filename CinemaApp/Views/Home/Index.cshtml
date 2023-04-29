@@ -8,7 +8,7 @@
     <p class="lead">Najlepsze kino w mieście!</p>
     <hr class="my-4">
     <p>Zapraszamy do naszego kina, gdzie czeka na Ciebie najlepsza rozrywka w mieście.</p>
-    <a class="btn btn-primary btn-lg" href="/Pricing" role="button">Zobacz cennik</a>
+    <a asp-action="Pricing" class="btn btn-primary btn-lg" role="button">Zobacz cennik</a>
 </div>
 
 <div class="row">
@@ -53,8 +53,7 @@
                         @foreach (var movie in Model.NewestMovies)
                         {
                             <tr>
-                                <td><a href="@Url.Action("MovieDetail", new { id = movie.ID })"><img src="@movie.ImageUrl" alt="Plakat filmu" /></a></td>
-                                <td>@movie.ImageUrl</td>
+                                <td><a href="@Url.Action("MovieDetail", new { id = movie.ID })"><img src="@movie.ImageUrl" alt="Plakat filmu" /></a></td>                              
                                 <td>@movie.Title</td>
                                 <td>@movie.Director</td>
                                 <td>@movie.Category</td>
@@ -94,7 +93,6 @@
                         {
                             <tr>
                                 <td><a href="@Url.Action("MovieDetail", new { id = movie.ID })"><img src="@movie.ImageUrl" alt="Plakat filmu" /></a></td>
-                                <td>@movie.ImageUrl</td>
                                 <td>@movie.Title</td>
                                 <td>@movie.Director</td>
                                 <td>@movie.Category</td>

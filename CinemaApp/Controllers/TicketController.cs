@@ -18,10 +18,18 @@ namespace CinemaApp.Controllers
 
             return View(model);
         }
-        public IActionResult TicketInfo([FromBody] List<TicketModel> tickets)
+        [HttpPost]
+        public IActionResult TicketInfo([FromRoute] int id ,[FromBody] List<TicketModel> tickets)
         {
-            var model = tickets;
+            
+            var schedule = _scheduleRepository.GetScheduleById(id);
 
+            var model = new TicketInfoViewModel
+            {
+                Tickets = tickets,
+                Schedule = schedule
+            };
+           
             return View(model);
         }
         public IActionResult CustomerData()
