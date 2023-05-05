@@ -1,3 +1,47 @@
-﻿
+﻿@model TicketInfoViewModel
 @{
+}
+
+
+
+@using (Html.BeginForm("TicketPayment", "Ticket", FormMethod.Post))
+{
+    @Html.ValidationSummary();
+    
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.FirstName)
+        @Html.TextBoxFor(m => m.Customer.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.FirstName, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.LastName)
+        @Html.TextBoxFor(m => m.Customer.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.LastName, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.Email)
+        @Html.TextBoxFor(m => m.Customer.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.Email, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.Phone)
+        @Html.TextBoxFor(m => m.Customer.Phone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.Phone, "", new { @class = "text-danger", @type="number"})
+    </div>
+
+
+    @foreach (var ticket in Model.Tickets)
+    {
+        <input type="hidden" name="Tickets[@Model.Tickets.IndexOf(ticket)].Row" value="@ticket.Row" />
+        <input type="hidden" name="Tickets[@Model.Tickets.IndexOf(ticket)].Place" value="@ticket.Place" />
+        <input type="hidden" name="Tickets[@Model.Tickets.IndexOf(ticket)].Price" value="@ticket.Price" />
+
+    }
+
+
+    <input type="submit" value="Przejdź do zapłaty" />
 }

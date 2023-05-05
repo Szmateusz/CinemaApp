@@ -34,26 +34,33 @@ namespace CinemaApp.Controllers
         }
         public IActionResult CustomerData([FromForm] TicketInfoViewModel model)
         {
-            int id = model.Schedule.ID;
-            var schedule = _scheduleRepository.GetScheduleById(id);
-
-            model.Schedule = schedule;
-            var res = new ReservationModel
-            {
-                SeanceID = schedule.ID,
-                Seance = schedule,
-
-            };
-            return View();
-        }
-        public IActionResult TicketPay([FromForm] TicketInfoViewModel model)
-        {
-            int id = model.Schedule.ID;
-            var schedule = _scheduleRepository.GetScheduleById(id);
-
-            model.Schedule = schedule;
-            
+                    
             return View(model);
+        }
+        [HttpGet]
+        public IActionResult TicketPayment([FromForm] TicketInfoViewModel model)
+        {
+                      
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult Pay(TicketInfoViewModel model)
+        {
+            var schedule = _scheduleRepository.GetScheduleById(model.Schedule.ID);
+
+            foreach (var res in model.Tickets)
+            {
+                var r = new ReservationModel
+                {
+                    SeanceID = schedule.ID,
+                    Row = res.Row,
+                    Place = res.Place,
+                    ReservationDate = DateTime.Now,
+
+
+                };
+            }
+            return RedirectToAction("Summary",);
         }
         public IActionResult Summary()
         {

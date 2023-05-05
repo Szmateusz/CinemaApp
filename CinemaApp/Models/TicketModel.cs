@@ -2,8 +2,9 @@
 {
     public class TicketModel
     {
-        
-        public string Row { get; set; }
-        public string Place { get; set; }
+
+        public Enums.PriceList Price { get; set; }
+        public int Row { get; set; }
+        public int Place { get; set; }
     }
 }

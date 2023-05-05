@@ -34,7 +34,7 @@ namespace CinemaApp.Migrations
 
                     b.HasIndex("MoviesID");
 
-                    b.ToTable("ActorModelMovieModel");
+                    b.ToTable("ActorModelMovieModel", (string)null);
                 });
 
             modelBuilder.Entity("CinemaApp.Models.ActorModel", b =>
@@ -59,7 +59,7 @@ namespace CinemaApp.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Actors");
+                    b.ToTable("Actors", (string)null);
                 });
 
             modelBuilder.Entity("CinemaApp.Models.HallModel", b =>
@@ -79,7 +79,7 @@ namespace CinemaApp.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Halls");
+                    b.ToTable("Halls", (string)null);
                 });
 
             modelBuilder.Entity("CinemaApp.Models.MovieModel", b =>
@@ -123,7 +123,7 @@ namespace CinemaApp.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Movies");
+                    b.ToTable("Movies", (string)null);
                 });
 
             modelBuilder.Entity("CinemaApp.Models.ReservationModel", b =>
@@ -169,7 +169,7 @@ namespace CinemaApp.Migrations
 
                     b.HasIndex("SeanceID");
 
-                    b.ToTable("Reservations");
+                    b.ToTable("Reservations", (string)null);
                 });
 
             modelBuilder.Entity("CinemaApp.Models.ReviewModel", b =>
@@ -201,7 +201,7 @@ namespace CinemaApp.Migrations
 
                     b.HasIndex("MovieID");
 
-                    b.ToTable("Reviews");
+                    b.ToTable("Reviews", (string)null);
                 });
 
             modelBuilder.Entity("CinemaApp.Models.ScheduleModel", b =>
@@ -235,7 +235,7 @@ namespace CinemaApp.Migrations
 
                     b.HasIndex("MovieModelID");
 
-                    b.ToTable("Schedules");
+                    b.ToTable("Schedules", (string)null);
                 });
 
             modelBuilder.Entity("CinemaApp.Models.UserModel", b =>
