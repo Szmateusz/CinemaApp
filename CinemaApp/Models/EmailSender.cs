@@ -11,7 +11,7 @@ namespace CinemaApp.Models
             _emailSettings = emailSettings.Value;
         }
 
-        public  bool SendEmail(string email, string subject, string message)
+        public bool SendEmail(string email, string subject, string message, string attachment)
         {
             try
             {
@@ -36,6 +36,9 @@ namespace CinemaApp.Models
                     Subject = subject,
                     Body = message
                 };
+
+                var pdfAttachment = new Attachment(@$"E:\ASP.NET-App\CinemaApp\CinemaApp\wwwroot\pdf\{attachment}", "application/pdf");
+                mailMessage.Attachments.Add(pdfAttachment);
 
                 smtp.Send(mailMessage);
 

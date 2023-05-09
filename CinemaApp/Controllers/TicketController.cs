@@ -91,7 +91,7 @@ namespace CinemaApp.Controllers
             var emailSubject = "Zakup biletów";
             var emailMessage = $"Zakup biletów na seans \"{summaryModel.Schedule.Movie}\" przez klienta {model.Customer.FirstName} {model.Customer.LastName}";
 
-            if (!_emailSender.SendEmail(model.Customer.Email, emailSubject, emailMessage))  {  return NotFound();  }
+            if (!_emailSender.SendEmail(model.Customer.Email, emailSubject, emailMessage,summaryModel.PDFUrl))  {  return NotFound();  }
 
             return View("Summary", summaryModel);
 
