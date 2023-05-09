@@ -55,7 +55,7 @@
     </div>
 
     <form asp-action="CustomerData" method="post">
-        <input type="submit" value="Zapłać" class="btn btn-primary" />
+        <input type="submit" value="Przejdź dalej" class="btn btn-primary" />
         @foreach (var ticket in Model.Tickets)
         {
             <input type="hidden" name="Tickets[@Model.Tickets.IndexOf(ticket)].Row" value="@ticket.Row" />
@@ -63,7 +63,7 @@
             <input type="hidden" name="Tickets[@Model.Tickets.IndexOf(ticket)].Price" value="@ticket.Price" />
 
         }
-        <input type="hidden" name="Schedule.ID" value="@Model.Schedule.ID" />
+        <input class ="bg-primary" type="hidden" name="Schedule.ID" value="@Model.Schedule.ID" />
        
     </form>
 </div>

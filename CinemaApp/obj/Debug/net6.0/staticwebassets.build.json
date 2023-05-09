@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/fz6D+K853T+WNsFjsP3nfmF8oFkpYR3BKG4+DKzwlg=",
+  "Hash": "8g3rQ0cRfrgX4BOywJnvOqRLmpYpbdHqRz5HsaHSQME=",
   "Source": "CinemaApp",
   "BasePath": "_content/CinemaApp",
   "Mode": "Default",
@@ -1069,6 +1069,57 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\pdf\\HelloWorld.pdf",
+      "SourceId": "CinemaApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\",
+      "BasePath": "_content/CinemaApp",
+      "RelativePath": "pdf/HelloWorld.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pdf\\HelloWorld.pdf"
+    },
+    {
+      "Identity": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\pdf\\reservationmateszal23@gmail.com05.pdf",
+      "SourceId": "CinemaApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\",
+      "BasePath": "_content/CinemaApp",
+      "RelativePath": "pdf/reservationmateszal23@gmail.com05.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pdf\\reservationmateszal23@gmail.com05.pdf"
+    },
+    {
+      "Identity": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\pdf\\reservationTest.pdf",
+      "SourceId": "CinemaApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\",
+      "BasePath": "_content/CinemaApp",
+      "RelativePath": "pdf/reservationTest.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pdf\\reservationTest.pdf"
     }
   ]
 }

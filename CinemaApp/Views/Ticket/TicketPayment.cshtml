@@ -75,7 +75,7 @@
     </div>
     </div>
 
-@using (Html.BeginForm("Pay", "Ticket", FormMethod.Post))
+@using (Html.BeginForm("Summary", "Ticket", FormMethod.Post))
 {
     <input type="hidden" name="Schedule.ID" value="@Model.Schedule.ID" />
 
@@ -94,5 +94,5 @@
     }
 
     <!-- Add payment gateway here-->
-    <input type="submit" value="Zapłać" />
+    <input class ="bg-primary" type="submit" value="Zapłać" />
 }

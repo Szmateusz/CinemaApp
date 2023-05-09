@@ -6,11 +6,16 @@ namespace CinemaApp.Controllers
 {
     public class TicketController : Controller
     {
+        public readonly IReservationsRepository _reservationsRepository;
         public readonly IScheduleRepository _scheduleRepository;
-        public TicketController(IScheduleRepository scheduleRepository) {
+        public readonly EmailSender _emailSender;
+
+        public TicketController(IScheduleRepository scheduleRepository, EmailSender emailSender, IReservationsRepository reservationsRepository)
+        {
 
             _scheduleRepository = scheduleRepository;
-
+            _emailSender = emailSender;
+            _reservationsRepository = reservationsRepository;
         }
         public IActionResult Index(int id)
         {
@@ -45,7 +50,7 @@ namespace CinemaApp.Controllers
             return View(model);
         }
         [HttpPost]
-        public RedirectResult Pay(TicketInfoViewModel model)
+        public IActionResult Summary(TicketInfoViewModel model)
         {
             var schedule = _scheduleRepository.GetScheduleById(model.Schedule.ID);
 
@@ -75,21 +80,40 @@ namespace CinemaApp.Controllers
                 
             };
 
-            
-           return (RedirectResult)Summary(summaryModel);
-        }
-        public IActionResult Summary(SummaryModel summaryModel)
-        {
-            if (summaryModel != null)
+
+            if (!AddReservation(summaryModel))
             {
-               
-                PDFClass.DownloadPdf(summaryModel);
-
-                return View(summaryModel);
-
+                return NotFound();
             }
 
-            return NotFound();
+            if (!PDFClass.DownloadPdf(summaryModel)) { return NotFound(); }
+
+            var emailSubject = "Zakup biletów";
+            var emailMessage = $"Zakup biletów na seans \"{summaryModel.Schedule.Movie}\" przez klienta {model.Customer.FirstName} {model.Customer.LastName}";
+
+            if (!_emailSender.SendEmail(model.Customer.Email, emailSubject, emailMessage))  {  return NotFound();  }
+
+            return View("Summary", summaryModel);
+
+        }
+        public bool AddReservation(SummaryModel summaryModel)
+        {
+            try
+            {
+                foreach (var res in summaryModel.Reservations)
+                {
+                    _reservationsRepository.AddReservation(res);
+
+                }
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return false;
+            
         }
 
         

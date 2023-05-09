@@ -26,13 +26,8 @@ namespace CinemaApp.Models
 
                 // dodanie treści do strony
                 XFont titleFont = new XFont("Arial", 20, XFontStyle.Bold);
-                gfx.DrawString("Podsumowanie", titleFont, XBrushes.Black,
+                gfx.DrawString("Bilety", titleFont, XBrushes.Black,
                     new XRect(0, 30, page.Width.Point, 0),
-                    XStringFormats.Center);
-
-                XFont successFont = new XFont("Arial", 18, XFontStyle.Bold);
-                gfx.DrawString("Zakup wykonany pomyślnie", successFont, XBrushes.Black,
-                    new XRect(0, 80, page.Width.Point, 0),
                     XStringFormats.Center);
 
                 XFont dataFont = new XFont("Arial", 12);
@@ -67,13 +62,13 @@ namespace CinemaApp.Models
                 y += 20;
                 gfx.DrawString($"Telefon: {Customer.Phone}", dataFont, XBrushes.Black, new XPoint(50, y));
 
-                string path = @"E:\ASP.NET-App\CinemaApp\CinemaApp\pdf";
-                string filename = "HelloWorld.pdf";
+                string path = @"E:\ASP.NET-App\CinemaApp\CinemaApp\wwwroot\pdf";
+                string filename = $"reservation{Customer.Email}{Customer.Row}{Customer.Place}.pdf";
                 string filepath = Path.Combine(path, filename);
 
                 document.Save(filepath);
 
-               
+                model.PDFUrl = filename;
                 return true;
 
             }
