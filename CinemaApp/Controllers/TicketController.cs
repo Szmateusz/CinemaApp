@@ -37,16 +37,19 @@ namespace CinemaApp.Controllers
                     
             return View(model);
         }
-        [HttpGet]
-        public IActionResult TicketPayment([FromForm] TicketInfoViewModel model)
+        [HttpPost]
+        public IActionResult TicketPayment(TicketInfoViewModel model)
         {
-                      
+           
+            model.Schedule = _scheduleRepository.GetScheduleById(model.Schedule.ID);
             return View(model);
         }
         [HttpPost]
-        public IActionResult Pay(TicketInfoViewModel model)
+        public RedirectResult Pay(TicketInfoViewModel model)
         {
             var schedule = _scheduleRepository.GetScheduleById(model.Schedule.ID);
+
+            List<ReservationModel> reservations = new List<ReservationModel>();
 
             foreach (var res in model.Tickets)
             {
@@ -56,15 +59,39 @@ namespace CinemaApp.Controllers
                     Row = res.Row,
                     Place = res.Place,
                     ReservationDate = DateTime.Now,
+                    FirstName = model.Customer.FirstName,
+                    LastName = model.Customer.LastName,
+                    Phone = model.Customer.Phone,
+                    Email = model.Customer.Email
 
 
                 };
+                reservations.Add(r);
             }
-            return RedirectToAction("Summary",);
+            var summaryModel = new SummaryModel
+            {
+                Reservations = reservations,
+                Schedule = schedule
+                
+            };
+
+            
+           return (RedirectResult)Summary(summaryModel);
         }
-        public IActionResult Summary()
+        public IActionResult Summary(SummaryModel summaryModel)
         {
-            return View();
+            if (summaryModel != null)
+            {
+               
+                PDFClass.DownloadPdf(summaryModel);
+
+                return View(summaryModel);
+
+            }
+
+            return NotFound();
         }
+
+        
     }
 }

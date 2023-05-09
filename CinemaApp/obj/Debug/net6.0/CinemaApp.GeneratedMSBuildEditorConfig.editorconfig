@@ -120,8 +120,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XFRpY2tldEluZm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Ticket/TicketPay.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XFRpY2tldFBheS5jc2h0bWw=
+[E:/ASP.NET-App/CinemaApp/CinemaApp/Views/Ticket/TicketPayment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XFRpY2tldFBheW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/ASP.NET-App/CinemaApp/CinemaApp/Views/_ViewImports.cshtml]
