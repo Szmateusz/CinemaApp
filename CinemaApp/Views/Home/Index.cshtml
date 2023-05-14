@@ -53,7 +53,7 @@
                         @foreach (var movie in Model.NewestMovies)
                         {
                             <tr>
-                                <td><a href="@Url.Action("MovieDetail", new { id = movie.ID })"><img src="@movie.ImageUrl" alt="Plakat filmu" /></a></td>                              
+                                <td><a href="@Url.Action("MovieDetail", new { id = movie.ID })"><img class ="poster" src="~/Media/Posters/@movie.ImageUrl" alt="Plakat filmu" /></a></td>
                                 <td>@movie.Title</td>
                                 <td>@movie.Director</td>
                                 <td>@movie.Category</td>
@@ -92,7 +92,7 @@
                         @foreach (var movie in Model.RecommendMovies)
                         {
                             <tr>
-                                <td><a href="@Url.Action("MovieDetail", new { id = movie.ID })"><img src="@movie.ImageUrl" alt="Plakat filmu" /></a></td>
+                                <td><a href="@Url.Action("MovieDetail", new { id = movie.ID })"><img class="poster" src="~/Media/Posters/@movie.ImageUrl" alt="Plakat filmu" /></a></td>
                                 <td>@movie.Title</td>
                                 <td>@movie.Director</td>
                                 <td>@movie.Category</td>

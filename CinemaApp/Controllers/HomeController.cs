@@ -36,9 +36,11 @@ namespace CinemaApp.Controllers
         {
             return View();
         }
-        public IActionResult Repeitorie()
+        public IActionResult Repeitorie(DateTime? selectedDate)
         {
-            var model = _scheduleRepository.GetAllSchedules().ToList();
+            DateTime date = selectedDate ?? DateTime.Today;
+
+            var model = _scheduleRepository.GetScheduleByDate(date).ToList();
             return View(model);
         }
         public IActionResult About()

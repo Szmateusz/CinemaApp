@@ -10,6 +10,8 @@ namespace CinemaApp.Controllers
    // [Authorize(Roles = "admin", AuthenticationSchemes = "Identity.Application")]
     public class AdminController : Controller
     {
+        public readonly Microsoft.AspNetCore.Hosting.IHostingEnvironment _hostingEnvironment;
+
         public readonly DBContext _context;
         public readonly IMoviesRepository _movieRepository;
         public readonly IScheduleRepository _scheduleRepository;
@@ -21,7 +23,7 @@ namespace CinemaApp.Controllers
 
 
         public AdminController(DBContext context, IMoviesRepository moviesRepository, IScheduleRepository scheduleRepository,
-            IHallRepository hallRepository, IReservationsRepository reservationsRepository, IActorsRepository actorRepository)
+            IHallRepository hallRepository, IReservationsRepository reservationsRepository, IActorsRepository actorRepository, Microsoft.AspNetCore.Hosting.IHostingEnvironment hostingEnvironment)
         {
             _context = context;
             _movieRepository = moviesRepository;
@@ -29,6 +31,7 @@ namespace CinemaApp.Controllers
             _hallRepository = hallRepository;
             _reservationsRepository = reservationsRepository;
             _actorRepository = actorRepository;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         public IActionResult Index()
@@ -238,13 +241,30 @@ namespace CinemaApp.Controllers
 
         #region Edit
         [HttpGet]
-        public IActionResult UpdateMovie()
+        public IActionResult UpdateMovie(int id)
         {
-            return View();
+            MovieModel model = _movieRepository.GetMovieById(id);
+            return View(model);
         }
         [HttpPost]
-        public IActionResult UpdateMovie(MovieModel movie)
+        public IActionResult UpdateMovie(MovieModel movie, IFormFile Image)
         {
+            if (Image != null && Image.Length > 0)
+            {
+                var fileName = Path.GetFileName(Image.FileName + ".jpg");
+                var filePath = Path.Combine(_hostingEnvironment.WebRootPath, "Media/Posters", fileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    Image.CopyTo(stream);
+                }
+                // Zapisz nazwę pliku w modelu
+
+                movie.ImageUrl = fileName;
+
+            }
+
+
             _movieRepository.UpdateMovie(movie);
             return RedirectToAction("MoviesView", "Admin");
         }

@@ -38,7 +38,7 @@
                     @foreach (var movie in Model.Movies)
                     {
                         <tr>
-                            <td><a class="text-dark link" asp-area="" asp-controller="Home" asp-action="MovieDetail" asp-route-id="@movie.ID"><img src="~/images/@movie.ImageUrl" alt="Movie image" /></a></td>
+                            <td><a class="text-dark link" asp-area="" asp-controller="Home" asp-action="MovieDetail" asp-route-id="@movie.ID"><img class="poster" src="~/Media/Posters/@movie.ImageUrl" alt="Movie image" /></a></td>
                             <td>@movie.Title</td>
                             <td>@movie.Rating</td>
                             <td>@movie.Category</td>

@@ -5,6 +5,62 @@
       "PackagePath": "staticwebassets\\CinemaApp.bundle.scp.css"
     },
     {
+      "Id": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\Media\\Galery\\bar.jpg",
+      "PackagePath": "staticwebassets\\Media\\Galery\\bar.jpg"
+    },
+    {
+      "Id": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\Media\\Galery\\foyer.jpg",
+      "PackagePath": "staticwebassets\\Media\\Galery\\foyer.jpg"
+    },
+    {
+      "Id": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\Media\\Galery\\sala.jpg",
+      "PackagePath": "staticwebassets\\Media\\Galery\\sala.jpg"
+    },
+    {
+      "Id": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\Media\\Posters\\61890cd9249e2_o_large.jpg.jpg",
+      "PackagePath": "staticwebassets\\Media\\Posters\\61890cd9249e2_o_large.jpg.jpg"
+    },
+    {
+      "Id": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\Media\\Posters\\7972266.6.jpg.jpg",
+      "PackagePath": "staticwebassets\\Media\\Posters\\7972266.6.jpg.jpg"
+    },
+    {
+      "Id": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\Media\\Posters\\chlopaki_nie_placza.jpg.jpg",
+      "PackagePath": "staticwebassets\\Media\\Posters\\chlopaki_nie_placza.jpg.jpg"
+    },
+    {
+      "Id": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\Media\\Posters\\cicha_noc.jpg.jpg",
+      "PackagePath": "staticwebassets\\Media\\Posters\\cicha_noc.jpg.jpg"
+    },
+    {
+      "Id": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\Media\\Posters\\ida.jpg.jpg",
+      "PackagePath": "staticwebassets\\Media\\Posters\\ida.jpg.jpg"
+    },
+    {
+      "Id": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\Media\\Posters\\krotki_film_o_milosci.jpg.jpg",
+      "PackagePath": "staticwebassets\\Media\\Posters\\krotki_film_o_milosci.jpg.jpg"
+    },
+    {
+      "Id": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\Media\\Posters\\krzyzacy.jpg.jpg",
+      "PackagePath": "staticwebassets\\Media\\Posters\\krzyzacy.jpg.jpg"
+    },
+    {
+      "Id": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\Media\\Posters\\mis.jpg.jpg",
+      "PackagePath": "staticwebassets\\Media\\Posters\\mis.jpg.jpg"
+    },
+    {
+      "Id": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\Media\\Posters\\psy.jpg.jpg",
+      "PackagePath": "staticwebassets\\Media\\Posters\\psy.jpg.jpg"
+    },
+    {
+      "Id": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\Media\\Posters\\rejs.jpg.jpg",
+      "PackagePath": "staticwebassets\\Media\\Posters\\rejs.jpg.jpg"
+    },
+    {
+      "Id": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\Media\\Posters\\w_pustyni_i_puszczy.jpg",
+      "PackagePath": "staticwebassets\\Media\\Posters\\w_pustyni_i_puszczy.jpg"
+    },
+    {
       "Id": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -251,6 +307,10 @@
     {
       "Id": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\pdf\\reservationTest.pdf",
       "PackagePath": "staticwebassets\\pdf\\reservationTest.pdf"
+    },
+    {
+      "Id": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\pdf\\reservationmateszal23@gmail.com03.pdf",
+      "PackagePath": "staticwebassets\\pdf\\reservationmateszal23@gmail.com03.pdf"
     },
     {
       "Id": "E:\\ASP.NET-App\\CinemaApp\\CinemaApp\\wwwroot\\pdf\\reservationmateszal23@gmail.com05.pdf",

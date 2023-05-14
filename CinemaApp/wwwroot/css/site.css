@@ -16,6 +16,14 @@ html {
 body {
   margin-bottom: 60px;
 }
+img.poster{
+    height:100px;
+    width:auto;
+}
+img.poster_big {
+    height: 400px;
+    width: auto;
+}
 .link-container {
     margin:5px;
     text-align:center;

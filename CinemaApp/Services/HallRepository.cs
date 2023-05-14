@@ -1,4 +1,5 @@
 ﻿using CinemaApp.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections;
 
 namespace CinemaApp.Services
@@ -16,7 +17,7 @@ namespace CinemaApp.Services
         public IEnumerable<HallModel> GetAllHalls()
 
         {
-            return _context.Halls.ToList();
+            return _context.Halls.Include(s=>s.Schedules).ToList();
         }
         public void AddHall(HallModel hall)
         {

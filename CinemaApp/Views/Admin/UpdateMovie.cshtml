@@ -6,9 +6,9 @@
 @using (Html.BeginForm("UpdateMovie", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div class="form-group">
-        @Html.LabelFor(x => x.ImageUrl)
-        <input type="file" class="form-control" name="ImageUrl" id="ImageUrl" />
-        @Html.ValidationMessageFor(m => m.ImageUrl, "", new { @class = "text-danger" })
+        
+        <input type="file" class="form-control" name="Image" id="Image" />
+       
     </div>
 
     <div class="form-group">

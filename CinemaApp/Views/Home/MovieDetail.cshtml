@@ -6,7 +6,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        <img src="@Model.ImageUrl" class="img-fluid" alt="@Model.Title" />
+        <img class = "poster_big" src="~/Media/Posters/@Model.ImageUrl" class="img-fluid" alt="@Model.Title" />
     </div>
     <div class="col-md-8">
         <h1>@Model.Title</h1>
@@ -45,6 +45,7 @@
                     <th>Date</th>
                     <th>Time</th>
                     <th>Room</th>
+                    <th>Akcje</th>
                 </tr>
             </thead>
             <tbody>
@@ -52,11 +53,13 @@
                 {
                      @foreach (var schedule in Model.Schedules)
                      {
-                        <tr>
-                            <td>@schedule.Date.ToShortDateString()</td>
-                            <td>@schedule.Date.ToString("hh:mm tt")</td>
-                            <td>@schedule.Hall.HallName</td>
-                        </tr>
+                            <tr>
+                                <td>@schedule.Date.ToShortDateString()</td>
+                                <td>@schedule.Date.ToString("hh:mm tt")</td>
+                                <td>@schedule.Hall.HallName</td>
+                                <td><a href="@Url.Action("Index", "Ticket", new { id = schedule.ID })">Rezerwuj</a></td>
+                            </tr>
+                      
                      }
                 }
                

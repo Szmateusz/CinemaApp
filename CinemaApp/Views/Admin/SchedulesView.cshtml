@@ -36,7 +36,7 @@
                     @foreach (var schedule in Model.Schedules)
                     {
                         <tr>
-                            <td><a class="text-dark link" asp-area="" asp-controller="Home" asp-action="MovieDetail" asp-route-id="@schedule.MovieID"><img src="~/images/@schedule.Movie.ImageUrl" alt="Movie image" /></a></td>
+                            <td><a class="text-dark link" asp-area="" asp-controller="Home" asp-action="MovieDetail" asp-route-id="@schedule.MovieID"><img class="poster" src="~/Media/Posters/@schedule.Movie.ImageUrl" alt="Movie image" /></a></td>
                             <td>@schedule.Movie.Title</td>
                             <td>@schedule.Hall.HallName</td>
                             <td>@schedule.Movie.Rating</td>

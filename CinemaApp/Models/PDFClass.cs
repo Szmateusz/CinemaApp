@@ -63,7 +63,7 @@ namespace CinemaApp.Models
                 gfx.DrawString($"Telefon: {Customer.Phone}", dataFont, XBrushes.Black, new XPoint(50, y));
 
                 string path = @"E:\ASP.NET-App\CinemaApp\CinemaApp\wwwroot\pdf";
-                string filename = $"reservation{Customer.Email}{Customer.Row}{Customer.Place}.pdf";
+                string filename = $"reservation{Customer.Email}{Customer.ReservationDate}.pdf";
                 string filepath = Path.Combine(path, filename);
 
                 document.Save(filepath);

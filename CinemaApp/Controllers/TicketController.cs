@@ -19,7 +19,14 @@ namespace CinemaApp.Controllers
         }
         public IActionResult Index(int id)
         {
-            var model = _scheduleRepository.GetScheduleById(id);
+            var schedule = _scheduleRepository.GetScheduleById(id);
+            var reservation = _reservationsRepository.GetReservationsForSchedule(id).ToList();
+
+            var model = new TicketIndexViewModel
+            {
+                Schedule = schedule,
+                Reservations = reservation
+            };
 
             return View(model);
         }

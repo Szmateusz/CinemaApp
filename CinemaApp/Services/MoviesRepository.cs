@@ -12,7 +12,11 @@ namespace CinemaApp.Services
         }
         public MovieModel GetMovieById(int id)
         {
-            return _context.Movies.Include(a => a.Actors).Include(s => s.Schedules).Include(r => r.Reviews).SingleOrDefault(m => m.ID == id);
+            return _context.Movies.Include(a => a.Actors)
+                .Include(s => s.Schedules)
+                    .ThenInclude(h=>h.Hall)
+                .Include(r => r.Reviews)
+                .SingleOrDefault(m => m.ID == id);
         }
         public IEnumerable<MovieModel> GetAllMovies()
 

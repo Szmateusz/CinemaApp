@@ -1,10 +1,25 @@
 ﻿@model List<ScheduleModel>
 
 @{
+    var today = DateTime.Today;
 }
   <div class="container my-4">
       <h1 class="text-center">Repertuar</h1>
     </div>
+
+   
+<div class="row">
+    @for (int i = 0; i < 5; i++)
+    {
+        var date = today.AddDays(i);
+        var dateString = date.ToString("dd");
+        var link = Url.Action("Repeitorie", new { selectedDate = date });
+        
+        <div class="col-md-2">
+            <a href="@link" class="btn btn-primary">@dateString</a>
+        </div>
+    }
+</div>
 
     <section>
      <div class="container">
@@ -15,7 +30,7 @@
              <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
 
-                <a href="@Url.Action("MovieDetail", new { id = schedule.MovieID })"><img src="@schedule.Movie.ImageUrl" alt="Plakat filmu" /></a>
+                        <a href="@Url.Action("MovieDetail", new { id = schedule.MovieID })"><img class="poster" src="~/Media/Posters/@schedule.Movie.ImageUrl" alt="Plakat filmu" /></a>
 
                 <div class="card-body">
 
