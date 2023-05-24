@@ -3,20 +3,21 @@
 @{
     var today = DateTime.Today;
 }
+<hr />  
   <div class="container my-4">
       <h1 class="text-center">Repertuar</h1>
     </div>
 
    
-<div class="row">
-    @for (int i = 0; i < 5; i++)
+<div class="d-inline-flex d-button-date">
+    @for (int i = 0; i < 7; i++)
     {
         var date = today.AddDays(i);
         var dateString = date.ToString("dd");
         var link = Url.Action("Repeitorie", new { selectedDate = date });
         
-        <div class="col-md-2">
-            <a href="@link" class="btn btn-primary">@dateString</a>
+        <div class = "button-date">
+            <a href="@link" class="btn">@dateString</a>
         </div>
     }
 </div>
@@ -38,11 +39,13 @@
                   <p class="card-text">Kategoria: @schedule.Movie.Category</p>
                   <p class="card-text">Kategoria wiekowa: @schedule.Movie.AgeCategory</p>
                   <p class="card-text">Długość: @schedule.Movie.LengthInMin</p>
-                  <p class="card-text">Data premiery: @schedule.Date</p>
-                  <p class="card-text">Data premiery: @schedule.Hall.HallName</p>
-                  <p class="card-text">Data premiery: @schedule.AvaiblePlacesCount</p>
+                  <p class="card-text">Data spektaklu: @schedule.Date.ToShortDateString()</p>
+                  <p class="card-text">Godzina spektaklu: @schedule.Date.ToShortTimeString()</p>
 
-                            <a href="@Url.Action("PurchaseTicket", new { ticketId = schedule.ID })" role="button" class="btn btn-primary">Kup bilety</a>
+                  <p class="card-text">Sala: @schedule.Hall.HallName</p>
+                  <p class="card-text">Dostępne miejsca: @schedule.AvaiblePlacesCount</p>
+
+                   <a href="@Url.Action("PurchaseTicket", new { ticketId = schedule.ID })" role="button" class="btn btn-primary">Kup bilety</a>
                   
                 </div>
               </div>

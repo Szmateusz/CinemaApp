@@ -2,21 +2,26 @@
 @{
     ViewData["Title"] = "Jr.Net Cinema";
 }
+<header>
+    <div class="jumbotron " >
+        
+            <h1 class="display-4">Witaj w kinie Jr.Net!</h1>
+            <p class="lead">Najlepsze kino w mieście!</p>
+            <hr class="my-4">
 
-<div class="jumbotron">
-    <h1 class="display-4">Witaj w kinie Jr.Net!</h1>
-    <p class="lead">Najlepsze kino w mieście!</p>
-    <hr class="my-4">
-    <p>Zapraszamy do naszego kina, gdzie czeka na Ciebie najlepsza rozrywka w mieście.</p>
-    <a asp-action="Pricing" class="btn btn-primary btn-lg" role="button">Zobacz cennik</a>
-</div>
+            <p>Zapraszamy do naszego kina, gdzie czeka na Ciebie najlepsza rozrywka w mieście.</p>
 
-<div class="row">
-    <div class="col-md-8">
-        <h2><a asp-action="About">O nas</a></h2>
-        <p>Jr.Net Cinema to kino, które powstało z myślą o zapewnieniu najwyższej jakości usług kinowych. Nasze sale kinowe są wyposażone w najnowsze systemy projekcyjne oraz dźwiękowe, a każdy seans to niezapomniane wrażenia. Ponadto, oferujemy bogaty wybór przekąsek oraz napojów, aby każdy seans był pełen komfortu i relaksu.</p>
+            <p>
+                <a asp-action="About">Jr.Net Cinema</a> to kino, które powstało z myślą o zapewnieniu najwyższej
+                jakości usług kinowych. Nasze sale kinowe są wyposażone w najnowsze systemy projekcyjne oraz dźwiękowe,
+                a każdy seans to niezapomniane wrażenia. Ponadto, oferujemy bogaty wybór przekąsek oraz napojów,
+                aby każdy seans był pełen komfortu i relaksu.
+            </p>
+
+            <a asp-action="Pricing" class="btn btn-primary" role="button">Zobacz cennik</a>
+     
     </div>
-    <div class="col-md-4">
+    <div class="header-login">
         <h2>Zaloguj się</h2>
         <form>
             <div class="form-group">
@@ -30,8 +35,10 @@
             <button type="submit" class="btn btn-primary">Zaloguj</button>
         </form>
     </div>
-</div>
+    
+</header>
 
+<hr />
 <section>
     <div class="row">
         <div class="col-md-12">
